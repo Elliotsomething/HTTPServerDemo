@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B51AC7C22251F1400CA1816 /* HTTPIPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B51AC7B22251F1400CA1816 /* HTTPIPTool.m */; };
 		DC7A34901E7B792000C226B7 /* NSFileHandle+httpServer.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7A348F1E7B792000C226B7 /* NSFileHandle+httpServer.m */; };
 		DC7A34B21E7D29A700C226B7 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = DC7A34A81E7D29A700C226B7 /* ioapi.c */; };
 		DC7A34B31E7D29A700C226B7 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = DC7A34AA1E7D29A700C226B7 /* mztools.c */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B51AC7A22251F1400CA1816 /* HTTPIPTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPIPTool.h; sourceTree = "<group>"; };
+		8B51AC7B22251F1400CA1816 /* HTTPIPTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPIPTool.m; sourceTree = "<group>"; };
 		DC7A348E1E7B792000C226B7 /* NSFileHandle+httpServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileHandle+httpServer.h"; sourceTree = "<group>"; };
 		DC7A348F1E7B792000C226B7 /* NSFileHandle+httpServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileHandle+httpServer.m"; sourceTree = "<group>"; };
 		DC7A34A71E7D29A700C226B7 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
@@ -67,6 +70,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B51AC7D222559DE00CA1816 /* HTTPServer */ = {
+			isa = PBXGroup;
+			children = (
+				DC7A34A51E7D29A700C226B7 /* SSZipArchive */,
+				8B51AC7A22251F1400CA1816 /* HTTPIPTool.h */,
+				8B51AC7B22251F1400CA1816 /* HTTPIPTool.m */,
+				DCC98A291E71730A00467099 /* HTTPServer.h */,
+				DCC98A2A1E71730A00467099 /* HTTPServer.m */,
+				DCC98A2C1E71733000467099 /* HTTPResponseHandler.h */,
+				DCC98A2D1E71733000467099 /* HTTPResponseHandler.m */,
+				DC7A348E1E7B792000C226B7 /* NSFileHandle+httpServer.h */,
+				DC7A348F1E7B792000C226B7 /* NSFileHandle+httpServer.m */,
+			);
+			path = HTTPServer;
+			sourceTree = "<group>";
+		};
 		DC7A34A51E7D29A700C226B7 /* SSZipArchive */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,17 +140,11 @@
 		DCC98A111E71727A00467099 /* HTTPServerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				DC7A34A51E7D29A700C226B7 /* SSZipArchive */,
+				8B51AC7D222559DE00CA1816 /* HTTPServer */,
 				DCC98A151E71727A00467099 /* AppDelegate.h */,
 				DCC98A161E71727A00467099 /* AppDelegate.m */,
 				DCC98A181E71727A00467099 /* ViewController.h */,
 				DCC98A191E71727A00467099 /* ViewController.m */,
-				DCC98A291E71730A00467099 /* HTTPServer.h */,
-				DCC98A2A1E71730A00467099 /* HTTPServer.m */,
-				DCC98A2C1E71733000467099 /* HTTPResponseHandler.h */,
-				DCC98A2D1E71733000467099 /* HTTPResponseHandler.m */,
-				DC7A348E1E7B792000C226B7 /* NSFileHandle+httpServer.h */,
-				DC7A348F1E7B792000C226B7 /* NSFileHandle+httpServer.m */,
 				DCC98A1B1E71727A00467099 /* Main.storyboard */,
 				DCC98A1E1E71727A00467099 /* Assets.xcassets */,
 				DCC98A201E71727A00467099 /* LaunchScreen.storyboard */,
@@ -180,6 +193,7 @@
 				TargetAttributes = {
 					DCC98A0E1E71727A00467099 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 628JMX4A5W;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -230,6 +244,7 @@
 				DCC98A141E71727A00467099 /* main.m in Sources */,
 				DCC98A2E1E71733000467099 /* HTTPResponseHandler.m in Sources */,
 				DC7A34B21E7D29A700C226B7 /* ioapi.c in Sources */,
+				8B51AC7C22251F1400CA1816 /* HTTPIPTool.m in Sources */,
 				DC7A34B61E7D29A700C226B7 /* SSZipArchive.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,9 +363,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 628JMX4A5W;
 				INFOPLIST_FILE = HTTPServerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.justlike.HTTPServerDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Elliott.HTTPServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -359,9 +375,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 628JMX4A5W;
 				INFOPLIST_FILE = HTTPServerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.justlike.HTTPServerDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Elliott.HTTPServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

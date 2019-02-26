@@ -96,11 +96,10 @@
 	listeningHandle = [[NSFileHandle alloc]initWithFileDescriptor:fileDescriptor closeOnDealloc:YES];
 	
 	//有客户端连接进来的监听函数（也可以是上面CFSocketCreate创建的回调函数）
-	[[NSNotificationCenter defaultCenter]
-		addObserver:self
-		selector:@selector(receiveIncomingConnectionNotification:)
-		name:NSFileHandleConnectionAcceptedNotification
-		object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self
+                                          selector:@selector(receiveIncomingConnectionNotification:)
+                                          name:NSFileHandleConnectionAcceptedNotification
+                                          object:nil];
 	
 	//在后台接受套接字连接（仅适用于流式套接字），并为通信通道的“近”（客户端）端创建文件句柄。
 	[listeningHandle acceptConnectionInBackgroundAndNotify];

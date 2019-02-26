@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "HTTPServer.h"
 #import "HTTPResponseHandler.h"
-
+#import "HTTPIPTool.h"
 
 @interface ViewController ()
 
@@ -20,6 +20,12 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
+    self.title = @"fasfdasdfa";
+        
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 100, 300, 60)];
+    label.text = [NSString stringWithFormat:@"IP:%@",[HTTPIPTool getIPAddress]];
+    [self.view addSubview:label];
+    
 	NSString *str = @"dddddd";
 	
 	[str writeToFile:[HTTPResponseHandler pathForFile]
