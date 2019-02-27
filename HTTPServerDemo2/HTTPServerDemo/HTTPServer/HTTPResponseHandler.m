@@ -880,6 +880,14 @@ const static NSDictionary *selectorForMethod = nil;
 	// "request" body.
 	//
 	
+    [incomingFileHandle appendingReceiveData:data];
+    if(incomingFileHandle.isHeaderComplete) {
+        if(incomingFileHandle.isBodyComplete) {
+            [self startResponse];
+            return;
+        }
+    }
+    
 	[incomingFileHandle waitForDataInBackgroundAndNotify];
 }
 

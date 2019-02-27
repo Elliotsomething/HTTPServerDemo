@@ -303,8 +303,8 @@ static const char *kHeaderDataSent = "kHeaderDataSent";
         NSAssert(0, nil);
         return;
     }
-    
-    objc_setAssociatedObject(self, kFileDataRangeInBody, [NSValue valueWithRange:NSMakeRange(fileDataLocation, fileDataEndLocation-fileDataLocation)], OBJC_ASSOCIATION_RETAIN);
+    //这里多了两个字节，要减去（\r\n）
+    objc_setAssociatedObject(self, kFileDataRangeInBody, [NSValue valueWithRange:NSMakeRange(fileDataLocation, fileDataEndLocation-fileDataLocation-2)], OBJC_ASSOCIATION_RETAIN);
     
     tmpRange = [dispostion rangeOfString:@"filename=\""];
     if(tmpRange.location == NSNotFound) {
